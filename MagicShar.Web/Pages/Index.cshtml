@@ -1,0 +1,114 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MagicShar</title>
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <style>
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.5;
+            font-size: 1em;
+        }
+
+        body {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            margin: 0;
+        }
+
+        .input {
+            position: relative;
+            font-size: 1.5em;
+            background: linear-gradient(21deg, #10abff, #1beabd);
+            padding: 3px;
+            display: inline-block;
+            border-radius: 9999em;
+        }
+
+            .input input {
+                position: relative;
+                display: inherit;
+                border-radius: inherit;
+                margin: 0;
+                border: none;
+                outline: none;
+                padding: 0 .325em;
+                z-index: 1;
+            }
+
+                .input input:focus + span {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+            .input span {
+                transform: scale(.993, .94);
+                transition: transform .5s, opacity .25s;
+                opacity: 0;
+                position: absolute;
+                z-index: 0;
+                margin: 4px;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: inherit;
+                pointer-events: none;
+                box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd, -3px 3px 30px #10abff;
+            }
+
+        input {
+            font-family: inherit;
+            line-height: inherit;
+            color: #2e3750;
+            min-width: 12em;
+        }
+
+        ::placeholder {
+            color: #cbd0d5;
+        }
+
+        html::after {
+            content: '';
+            background: linear-gradient(21deg, #10abff, #1beabd);
+            height: 3px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        }
+    </style>
+</head>
+
+<body>
+<div class="text-center">
+    <h3 class="app-title">Волшебный Шар!</h3>
+    <div class="magicball-outer" id="mb-container">
+        <div class="magicball-inner">
+                <p class="magicball-response" id="response">🧙</p>
+        </div>
+        <div class="magicball-spotlight"></div>
+        <div class="magicball-bg-shadow"></div>
+    </div>
+        <p>
+            <span class="input">
+                <input type="text" id="question-input" placeholder="Вопрос?">
+                <span></span>
+            </span>
+        </p>
+</div>
+<script src="/js/site.js"></script>
+</body>
